@@ -1,0 +1,9 @@
+{
+  "name": "selenium_hub_registration",
+  "description": "Start/Stop Selenium Grid Hub",
+  "path": "Hub.exe", // The path can be relative only on Windows OS!
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://gceknaidfolkjcnglohhjahpppddjjij/"
+  ]
+}
