@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Selenium Grid</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="swtichStylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="text-center">Native Messaging Selenium Grid Management</h1>
+            <p class="text-center blockquote-foote">Start/Stop-Hub/Node</p>
+        </div>
+    </div>
+    <div class="container text-center content">
+        <label>
+            <p class="text-secondary">HUB Registration</p>
+            <!--<button class="btn btn-primary">Start Hub</button>-->
+            <div class="col-sm-5">
+                <button id="hub_btn" type="button" class="btn btn-lg btn-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                <div class="handle"></div>
+                </button>
+            </div>
+        </label>
+        <img class="img" src="image.png" alt="Selenium" width="300px" height="300px">
+        <label>
+            <p class="text-secondary">Node Registration</p>
+            <!--<button class="btn btn-primary">Start Hub</button>-->
+            <div class="col-sm-5">
+                <button type="button" class="btn btn-lg btn-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                <div class="handle"></div>
+                </button>
+            </div>
+        </label>
+    </div>
+
+
+    <!--Starting Ouput panel from here-->
+    <div class="container output-panel">
+        <div class="card mb-3">
+            <div class="card-block">
+                <blockquote class="card-blockquote">
+                    <ul class="list-group">
+                        <li class="list-group-item justify-content-between">
+                            Hub Registration --
+                            <!--<p id="hub-out-text"></p>-->
+                            <span class="badge badge-pill"><img id="hub-status" src="off.png" alt="hub-status" width="22px" height="35px"></span>
+                        </li>
+                        <li class="list-group-item justify-content-between">
+                            Node Registration --
+                            <!--<p id="node-out-text"></p>-->
+                            <span class="badge badge-pill"><img id="node-status" src="off.png" alt="node-status" width="22px" height="35px"></span>
+                        </li>
+                    </ul>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <script src="plugin_js/plugin_hub.js"></script>
+</body>
+
+</html>

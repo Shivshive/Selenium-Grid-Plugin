@@ -1,0 +1,29 @@
+#dragon {
+    /*width: 100px;
+    height: 100px;
+    background: red;*/
+    position: relative;
+    animation-name: mymove;
+    animation: mymove 5s;
+    animation-iteration-count:1;
+    animation-direction: normal;
+    animation-timing-function:ease-in;
+    z-index: 1;
+    opacity: 0;
+}
+
+@keyframes mymove {
+    from{
+        opacity: 0;
+        margin-left: 0%;
+    }
+    to{
+        opacity: 1;
+        margin-left: 85%;
+    }
+}
+
+#bulb{
+    float: right;
+    z-index: 0;
+}
