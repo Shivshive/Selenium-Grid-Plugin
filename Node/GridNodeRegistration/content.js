@@ -6,7 +6,7 @@
  * Client dispatches 'send-message-event' event with data object. 
  * Then the data object is sent to background script.
  */
-document.addEventListener("send-message-event", function (data) {
+document.addEventListener("node-message-event", function (data) {
 	var request = data.detail.data;
 	console.info(request);
 	// Send message to the background script
@@ -20,7 +20,7 @@ document.addEventListener("send-message-event", function (data) {
 chrome.runtime.onMessage.addListener(function (response, sender, sendResponse) {
 	console.info(response);
 	// Send response to the front page
-	var event = new CustomEvent("get-message-event", {
+	var event = new CustomEvent("node-get-message-event", {
 		detail: {
 			data: response
 		},

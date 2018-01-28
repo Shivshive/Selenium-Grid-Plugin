@@ -4,6 +4,6 @@
   "path": "Hub.exe", // The path can be relative only on Windows OS!
   "type": "stdio",
   "allowed_origins": [
-    "chrome-extension://gceknaidfolkjcnglohhjahpppddjjij/"
+    "chrome-extension://glekjemgdpgjnlinilbfkjnkcjmfkhah/"
   ]
 }

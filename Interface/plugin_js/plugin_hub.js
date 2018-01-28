@@ -1,32 +1,41 @@
 $(document).ready(function () {
 
-	var sendMessageBtn = $('#send-message-button');
-	var inputElem = $('#input-text');
-	var responseElem = $('#response');
-	
-    var button_hub = $('#hub_btn');
+	var hubOutput = $('#hub-out-text');
+	var nodeOutput = $('#node-out-text');
 
-    // button_hub.on('click',function(){
+	var button_hub = $('#hub_btn');
+	var button_node = $('#node_btn');
 
-    //     if($(this).hasClass('active')){
-    //         console.log('unclicked');    
-    //     }
-    //     else{
-    //         console.log('clicked');
-    //     }
-        
-    // });
+	button_hub.on('click', function () {
 
+		if ($(this).hasClass('active')) {
+			sendMsg('stop-hub', 'hub');
+		}
+		else {
+			sendMsg('start-hub', 'hub');
+		}
 
+	});
+
+	button_node.on('click', function () {
+
+		if ($(this).hasClass('active')) {
+			sendMsg('stop-node', 'node');
+		}
+		else {
+			sendMsg('start-node', 'node');
+		}
+
+	});
 
 	/**
-	 * Send message operation
-	 */
-	sendMessageBtn.click(function () {
+ 	* Send message event listener
+ 	*/
+	function sendMsg(message, type) {
 		var request = {};
-		request.message = inputElem.val();
+		request.message = message
 
-		var event = new CustomEvent("send-message-event", {
+		var event = new CustomEvent(type + "-message-event", {
 			detail: {
 				data: request
 			},
@@ -34,13 +43,33 @@ $(document).ready(function () {
 			cancelable: true
 		});
 		document.dispatchEvent(event);
-	});
-			
+	}
+
 	/**
 	 * Get message event listener
 	 */
-	document.addEventListener("get-message-event", function (data) {
+	document.addEventListener("hub-get-message-event", function (data) {
 		var responseObject = data.detail.data;
-		responseElem.text(responseObject.message);
+		var bulb_hub = $('#hub-status');
+		if(responseObject.message == 'Hub Started..!'){
+			bulb_hub.attr('src','on.png');
+		}
+		else{
+			bulb_hub.attr('src','off.png');
+		}
+		hubOutput.text(responseObject.message);
 	});
+
+	document.addEventListener("node-get-message-event", function (data) {
+		var responseObject = data.detail.data;
+		var bulb_node= $('#node-status');
+		if(responseObject.message=='Application Stopped..!'){
+			bulb_node.attr('src','off.png');
+		}
+		else{
+			bulb_node.attr('src','on.png');
+		}
+		nodeOutput.text(responseObject.message);
+	});
+
 });
