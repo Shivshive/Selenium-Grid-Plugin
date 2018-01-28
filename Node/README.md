@@ -17,4 +17,10 @@
   * Reload extension once.
   * Open index.html from Web and go ahead.
   * Use commands like 'start-node' or 'stop-node' to register node.
+
+#Condition
+  In the current node registration, perform node registration only on the pc if the hub is running on same system.
+  For remote registration node.exe is to be altered. 
+  Support for that will also be provided further. Till then enjoy !!!!
+  
   ...............................use it and enjoy.. !!!......................................
